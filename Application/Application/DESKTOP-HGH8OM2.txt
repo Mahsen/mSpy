@@ -1,0 +1,6 @@
+
+Pinging 192.168.88.13 with 32 bytes of data:
+Reply from 192.168.88.12: Destination host unreachable.
+
+Ping statistics for 192.168.88.13:
+    Packets: Sent = 1, Received = 1, Lost = 0 (0% loss),

@@ -1,5 +1,5 @@
 
-document.getElementById('PushCommand').addEventListener('click', function() {
+function SendRequest() {
     let command = document.getElementById('RequestCommand').value;
 
     // Sending command to PHP using fetch
@@ -15,8 +15,15 @@ document.getElementById('PushCommand').addEventListener('click', function() {
         document.getElementById('RespondCommand').innerText = data;
     })
     .catch(error => console.error('Error:', error));
-});
+}
 
+document.getElementById('PushCommand').addEventListener('click', SendRequest);
+
+document.getElementById("RequestCommand").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        SendRequest();
+    }
+});
 
 function GiveRespond() {
     const timestamp = new Date().getTime(); // Get the current timestamp
