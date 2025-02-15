@@ -1,0 +1,180 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+/* Container for the entire content */
+.container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+/* Left sidebar - directory list */
+#directory-list {
+    width: 300px; /* Increase the width for the list */
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-left: 0; /* Move the list more to the left */
+}
+
+#directory-list h3 {
+    color: #2980b9;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#directory-list a {
+    display: block;
+    margin: 10px 0;
+    color: #3498db;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#directory-list a:hover {
+    background-color: #ecf0f1;
+}
+
+/* Right side - image container */
+#image-container {
+    flex: 1;
+    max-width: 1000px; /* Increase the max-width of the image container */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Image styling */
+#screenshot {
+    width: 100%; /* Make the image take full width */
+    max-width: 1200px; /* Set the max-width to make the image bigger */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease;
+}
+
+.logo {
+    position: relative;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.m {
+    display: inline-block;
+    position: relative;
+    color: yellow;
+    transform: rotate(-10deg);
+}
+
+.underline {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(45deg, #ffcc00, #ff9900, #ffdd55, #ffcc00);
+    background-size: 300% 300%;
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    animation: gradientShift 3s infinite linear;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #directory-list {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    #image-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.command-container {
+    display: flex;
+    align-items: center;  /* Align input and button vertically */
+    gap: 10px;  /* Space between input and button */
+    margin-bottom: 10px; /* Space between input area and textarea */
+}
+
+#RequestCommand {
+    flex: 1;  /* Input takes available space */
+    max-width: 400px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#PushCommand {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#PushCommand:hover {
+    background-color: #0056b3;
+}
+
+#RespondCommand {
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+    margin-top: 10px;
+    align-self: flex-start; /* Align the textarea to the left */
+}
