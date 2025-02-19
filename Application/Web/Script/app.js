@@ -2,6 +2,10 @@
 function SendRequest() {
     let command = document.getElementById('RequestCommand').value;
 
+    if(command == "") {
+        return;
+    }
+
     // Sending command to PHP using fetch
     fetch('https://mahsen.ir/APP/mSpy/do.php', {
         method: 'POST',
@@ -17,7 +21,7 @@ function SendRequest() {
     .catch(error => console.error('Error:', error));
 }
 
-document.getElementById('PushCommand').addEventListener('click', SendRequest);
+//document.getElementById('PushCommand').addEventListener('click', SendRequest);
 
 document.getElementById("RequestCommand").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
@@ -59,6 +63,14 @@ function updateImage() {
         imageElement.src = img.src; // Update the image source once the image is fully loaded
     };
     img.src = imageUrl; // Set the image source for the preloading
+}
+
+// Function to refresh the image based on the directory clicked
+function PushCommand(Command) {
+    if(Command!=undefined) {
+        document.getElementById('RequestCommand').value = Command;
+    }
+    SendRequest();
 }
 
 // Automatically refresh image every 2 seconds
